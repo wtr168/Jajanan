@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu & Harga — Tenongan Kita</title>
+<meta name="description" content="Katalog jajanan tradisional Tenongan Kita: komposisi, harga, dan foto produk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+<div class="page page-wide">
+
+  <a class="back-link" href="index.html">&larr; Kembali</a>
+
+  <header>
+    <p class="brand">Menu &amp; Harga</p>
+    <p class="tagline">Ketuk produk untuk lihat komposisi &amp; harga lengkap</p>
+  </header>
+
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" placeholder="Cari nama produk...">
+  </div>
+
+  <div class="filter-group">
+    <p class="filter-label">Kategori</p>
+    <div class="chip-row" id="category-chips"></div>
+  </div>
+
+  <div class="filter-group">
+    <p class="filter-label">Harga</p>
+    <div class="chip-row" id="price-chips"></div>
+  </div>
+
+  <p class="empty-msg" id="empty-msg">Produk tidak ditemukan.</p>
+  <div class="grid" id="catalog-grid"></div>
+
+  <footer>Tenongan Kita · Jajanan pasar khas Solo</footer>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Tutup">&times;</button>
+    <img class="modal-img" id="modal-img" src="" alt="">
+    <div class="modal-body">
+      <p class="modal-name" id="modal-name"></p>
+      <p class="modal-price" id="modal-price"></p>
+      <p class="modal-label">Komposisi</p>
+      <ul class="modal-comp" id="modal-comp"></ul>
+      <p class="modal-desc" id="modal-desc"></p>
+      <a class="order-btn" id="modal-order" href="#" target="_blank" rel="noopener">💬 Pesan produk ini</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

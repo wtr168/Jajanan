@@ -1,0 +1,173 @@
+/* =====================================================================
+   style.css — gaya dasar yang dipakai di semua halaman
+   (warna, font, kartu link, header, footer)
+   ===================================================================== */
+
+:root{
+  --kapur:#F4E9D6;
+  --kapur-2:#EDE0C6;
+  --soga:#6E3F27;
+  --soga-dark:#4A2A18;
+  --gula:#B9762F;
+  --pandan:#4C6B3F;
+  --pandan-dark:#38502D;
+  --ink:#2E2117;
+  --line: rgba(74,42,24,0.18);
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+
+body{
+  background: var(--kapur);
+  background-image: radial-gradient(circle at 1px 1px, rgba(74,42,24,0.10) 1px, transparent 0);
+  background-size: 22px 22px;
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  min-height:100vh;
+  padding: 48px 20px 64px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* --- header & mascot --- */
+
+.mascot{
+  width:112px;
+  height:112px;
+  margin: 0 auto 14px;
+  display:block;
+  object-fit:contain;
+  filter: drop-shadow(0 6px 10px rgba(74,42,24,0.18));
+}
+
+header{ text-align:center; margin-bottom: 34px; }
+
+.brand{
+  font-family:'Fraunces', serif;
+  font-optical-sizing:auto;
+  font-weight:600;
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  letter-spacing: -0.01em;
+  color: var(--soga-dark);
+  margin:0 0 8px;
+  line-height:1.05;
+}
+
+.tagline{
+  font-size: 0.98rem;
+  color: var(--soga);
+  margin:0;
+  line-height:1.5;
+}
+
+.tagline em{
+  font-style: normal;
+  color: var(--pandan-dark);
+  font-weight:600;
+}
+
+/* --- link cards (halaman utama / link tree) --- */
+
+nav.links{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin: 30px 0 0;
+}
+
+.link-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background: #FFFBF2;
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 18px;
+  text-decoration:none;
+  color: var(--ink);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  box-shadow: 0 1px 0 rgba(74,42,24,0.05);
+}
+
+.link-card:hover{
+  transform: translateY(-2px);
+  border-color: var(--gula);
+  box-shadow: 0 8px 20px rgba(110,63,39,0.14);
+}
+
+.link-card:active{ transform: translateY(0px) scale(0.99); }
+
+.link-icon{
+  flex:0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 20px;
+  background: var(--kapur-2);
+}
+
+.link-text{ flex:1; min-width:0; }
+
+.link-title{
+  font-weight:700;
+  font-size: 1rem;
+  color: var(--soga-dark);
+  margin:0 0 1px;
+}
+
+.link-sub{
+  font-size: 0.83rem;
+  color: rgba(46,33,23,0.65);
+  margin:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.link-card.primary{
+  background: var(--pandan);
+  border-color: var(--pandan-dark);
+}
+.link-card.primary .link-title{ color:#FBF6E9; }
+.link-card.primary .link-sub{ color: rgba(251,246,233,0.78); }
+.link-card.primary .link-icon{ background: rgba(255,255,255,0.16); }
+.link-card.primary:hover{ border-color:#FBF6E9; }
+
+/* --- back link (halaman menu) --- */
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color: var(--soga);
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.9rem;
+  margin-bottom: 22px;
+}
+.back-link:hover{ text-decoration:underline; }
+
+/* --- footer --- */
+
+footer{
+  text-align:center;
+  margin-top: 40px;
+  font-size: 0.78rem;
+  color: rgba(46,33,23,0.55);
+}
+
+footer a{ color: var(--soga); text-decoration: underline; text-underline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce){
+  .link-card, .card{ transition:none; }
+}
